@@ -1,0 +1,237 @@
+<!DOCTYPE html><!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--css-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+        <link rel="stylesheet" type="text/css" href="css/EstilosFormulariosResv3.css">
+	<!--icons-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+
+	  <!--datables estilo bootstrap 4 CSS-->  
+    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+
+     <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
+	
+
+	<title>Modificar de servicios</title>
+</head>
+<body>
+
+<div class="container">
+	<aside>
+		<div class="top">
+			<div class="logo">
+				<img src="img/logosis.png">
+				<h2>Sistempark</h2>
+			</div>
+			<div class="close" id="close-btn">
+				<span class="material-icons-sharp">close</span>
+			</div>
+		</div>
+
+		<div class="sidebar">
+			<a th:href="@{/admin}" class="active">
+				<span class="material-icons-sharp">grid_view</span>
+					<h3>incio</h3>
+			</a>
+
+			<a th:href="@{/reservanAtra}">
+				<span class="material-icons-sharp">sentiment_very_satisfied</span>
+					<h3>Atracciones</h3>
+			</a>
+
+			<a th:href="@{/reservEventAdmin}">
+				<span class="material-icons-sharp">celebration</span>
+					<h3>Eventos</h3>
+			</a>
+
+			<a th:href="@{/consultaAtraAdmin}">
+				<span class="material-icons-sharp">content_paste_search</span>
+					<h3>Consusltar Reservaciones Atracciones</h3>
+			</a>
+                    
+                        <a th:href="@{/consultEventAdmin}">
+				<span class="material-icons-sharp">content_paste_search</span>
+					<h3>Consultar Reservaciones Eventos</h3>
+			</a>
+
+			<a th:href="@{/formularioSer}">
+				<span class="material-icons-sharp">info</span>
+					<h3>Servicios</h3>
+			</a>
+
+			<a th:href="@{/controlus}">
+				<span class="material-icons-sharp">groups</span>
+					<h3>Control de usuarios</h3>
+			</a>
+
+			<a th:href="@{/controlUsu}">
+				<span class="material-icons-sharp">contact_mail</span>
+					<h3>Enviar correos</h3>
+			</a>
+
+			<a th:href="@{/}">
+				<span class="material-icons-sharp">logout</span>
+					<h3>Salir</h3>
+			</a>
+
+		</div>
+	</aside>
+                               <!--======= contenido =======-->
+
+    <main >
+    	<h1>Administrador</h1>
+
+        
+          <br>
+          
+    	<form  class="form"  method="POST" th:action="@{/guardarModiSer}" th:object="${servicio}"   > 
+        <h2 class="form-tit">Crea el nuevo servicio</h2>
+
+        <div class="contenedor">
+            
+            <input type="hidden" name="codigo servicio" th:field="*{cod_servicio}"  placeholder="Servicio..." required class="input-100">
+
+
+            <h5>Nombre del nuevo servicio</h5>   
+               
+            <input type="text" name="Nombre_del_servicio" th:field="*{nom_servicio}"  placeholder="Servicio..." required class="input-100">
+            
+
+            <h5>Precio del servicio</h5>
+
+            <input type="text" name="Precio_servicio" th:field="*{precio_servicio}"  placeholder="Precio del servicio..." required class="input-100" >
+
+            <h5>Tiempo del servicio</h5>
+
+            <input type="text" name="Tiempo_servicio" th:field="*{tiempo_servicio}"  placeholder="Tiempo servicio..." required class="input-100">
+               
+               
+
+           
+
+            
+            <!-- botones-->
+
+            <input type="submit" value="Registrar" class="boton"onclick="swal('Registrado','El servicio sea modficado exitosamente', 'success');">
+
+            <input type="submit" value= "Cancelar" class="boton"  onclick="swal('Cancelar', '', 'warning');">
+
+
+        </div>
+    </form>
+
+
+
+
+
+
+
+    </main>                           
+
+                                           <!--======= no se que sigue :3 =======-->
+
+    <div class="right">
+    	<div class="top">
+    		<button id="menu-btn">
+    		<span class="material-icons-sharp">menu</span>
+    		</button>
+    		
+    		<div class="profile">
+    			<div class="info">
+    				<p>Hola <b>Juan</b></p>
+    				<small class="text-muted">Admin</small>
+    			</div>
+    			<div class="profile-photo">
+    				<img src="img/profile-1.jpg">
+    			</div>
+    		</div>
+    	</div>
+
+    	<!--==============-->
+
+    	<div class="sales-analytics">
+    		<h2>Servicios</h2>
+    		<div class="item online"> 
+    			<div class="icon">
+    				<span class="material-icons-sharp">workspace_premium</span>
+    			</div>
+    		    <div class="right">
+    			 <div class="info">
+    				<h3>Reservaciones</h3>
+    				<small class="text-muted">Atracciones</small>
+    			</div>
+ 
+    		 </div>
+    		</div>
+
+    		<div class="item offline"> 
+    			<div class="icon">
+    				<span class="material-icons-sharp">workspace_premium</span>
+    			</div>
+    		<div class="right">
+    			<div class="info">
+    				<h3>Reservaciones</h3>
+    				<small class="text-muted">Eventos</small>
+    			</div>
+    			
+    		</div>
+    		</div>
+
+    		<div class="item add-product">
+    			<div>
+    				<span class="material-icons-sharp">add</span>
+    				<h3>Añadir servicio</h3>
+    			</div>
+    		</div>
+
+
+
+
+    	</div>
+
+
+
+
+
+  </div> 
+
+                          <!--=======  fin de no se que sigue :3  =======-->
+
+
+</div>
+
+
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    
+      
+    <!-- datatables JS -->
+    <script type="text/javascript" src="datatables/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>    
+     
+    <!-- para usar botones en datatables JS -->  
+    <script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+    <script src="datatables/JSZip-2.5.0/jszip.min.js"></script>    
+    <script src="datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
+    <script src="datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+    
+ <script src ="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+
+ <script src="js/index.js"></script>
+ <script src="js/main.js"></script>
+	
+</body>
+</html>

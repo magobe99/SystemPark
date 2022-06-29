@@ -1,0 +1,89 @@
+
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+
+.form{
+	background-color: #EBEBEB;
+	margin: auto;
+	width: 100%;
+	max-width: 500px;
+	padding: 1.5em 3em;
+	border-radius: 10px;
+	box-shadow: 0 5px 10px -5px rgb(0, 0, 0 / 30%) ;
+	text-align: center;
+
+
+}
+
+
+/*esta son las etiquetas del formulario*/
+
+.form-tit{
+	/*background-color: #03045e;*/
+	color: #000;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 120;
+	padding: 10px;
+	border-top-right-radius: 9px;
+	border-top-left-radius: 9px;
+	/*border-bottom: 5px solid #03045e;*/
+	font-weight: bold;
+}
+
+/*paquete*/
+
+.form-selcto{
+	padding: 10px 30px;
+	margin: 5px;
+}
+
+/*nombre*/
+.input-70{
+	padding: 10px 30px;
+	margin: 5px;
+}
+
+/*tematica, fecha*/
+.input-100{
+	padding: 10px 30px;
+	margin: 5px;
+
+}
+/*hora de la reservacion*/
+.input-50{
+	padding: 10px 30px ;
+	margin: 5px;
+}
+
+.input-110{
+	padding: 10px 40px;
+	margin: 7px;
+}
+.boton{
+	background-color: #03045e;
+	color: #fff;
+	margin: auto;
+	padding: 10px 50px;
+	font-size: 15px;
+	border-radius: 7px;
+	cursor: pointer;
+}
+.boton:hover{
+	background-color: #498EB5;
+	
+}
+
+.boton:active{
+	transform: scale(1.05);
+}
+
+
+@media (max-width: 425px){
+	.form-title{
+		font-size: 1.8rem;
+	}

@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="css/styles_login_regis.css">
+
+        <title>Inicio de sesion</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+         <header class="header" id="header">
+
+            <nav class="nav container">
+                
+                <a href="#" class="nav__logo">
+
+                    SistemPark <i class='bx bxs-home-alt-2' ></i>
+
+                </a>
+
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+
+                   <!--==================== Incio ====================-->
+                            <li class="nav__item"> 
+                      
+                             <a th:href="@{/}" class="nav__link active-link" >
+                                <i class='bx bx-home-alt-2' ></i>
+                                <span>Incio</span>
+
+                             </a>
+
+                            </li>
+                   <!--==================== Otra opcion ====================-->
+                            <li class="nav__item"> 
+
+                             <a th:href="@{/}" class="nav__link">
+                                <i class='bx bx-building-house' ></i>
+                                <span>Portafolio</span>
+
+                             </a>
+                   
+                            </li>
+                   <!--==================== Otra opcion ====================-->
+                            <li class="nav__item"> 
+
+                             <a th:href="@{/}" class="nav__link">
+                                <i class='bx bx-award' ></i>
+                                <span>Quienes somos</span>
+
+                             </a>
+
+                            </li>
+
+                   <!--==================== Otra opcion ====================-->
+                            <li class="nav__item"> 
+
+                             <a th:href="@{/}" class="nav__link">
+                                <i class='bx bx-phone' ></i>
+                                <span>Contactenos</span>
+
+                             </a>
+
+                            </li>
+
+                            
+                        </ul>   
+                    </div>
+
+                 <i class='bx bx-moon  change-theme' id="theme-button"></i>
+                    
+              <a th:href="@{/login}" class="button nav__button">Ingresar</a>
+              
+              
+
+            </nav>
+            
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            
+
+            <div id='login-form'class='regis'>
+            <div class="formbox">
+                <div class='buttonbox'>
+                    <div id='btnn'></div>
+                    <button type='button'onclick='login()'class='togglebtn'>Ingresar</button>
+                    <button type='button'onclick='register()'class='togglebtn'>Registrate</button>
+                </div>
+
+                <!-- formualrio de Login-->
+
+                <form id='login' class='inputgrouplogin' th:action="@{/IniciarSesion}" th:object="${usuario}" method="POST">
+                    <input type='text'class='inputfield 'placeholder='Correo' required th:field="*{correo}" >
+                    <input type='password'class='inputfield 'placeholder='Contraseña' required th:field="*{clave}">
+                    
+                    
+            
+            <button type='submit'class='submit-btnn' onclick="swal('Ingresando','has ingresado exitosamente', 'success');">Ingresar</button>
+         
+            <br>
+            <div>  <a th:href="@{/FormularioC}" class="recu">Recuperar contraseña</a> </div>
+                </form>
+                 
+
+         <!-- formualrio de resgistro-->
+
+         <form id='register' class='inputgroupregister' method="POST" th:action="@{/guardarUsuario}" th:object="${usuario}">
+
+             <input type='text'class='inputfield'placeholder='Nombre completo'required  th:field="*{nom_usuario}" >
+             <input type='email'class='inputfield'placeholder='Correo' required th:field="*{correo}">
+             <input type='text'class='inputfield'placeholder='Fecha de nacimiento' required th:field="*{fecha_nacimiento}">
+             <input type='password'class='inputfield'placeholder='Digite Contraseña' required th:field="*{clave}">
+             <input type='password'class='inputfield'placeholder='Teléfono' required th:field="*{telefono}">
+             
+                    <button type='submit'class='submit-btnn' onclick="swal('Registrado','Te has registrado exitosamente', 'success');" >Registrar</button>
+             </form>
+            </div>
+        </div>
+
+              
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+
+            <div class="footer__container container grid">
+                <div>
+                    <a href="#" class="footer__logo">
+                        SistemPark<i class="bx bxs-home-alt-2"></i>
+                    </a>
+                    <p class="footer__description">
+                       
+                       
+                       Nuestra visión es hacer de todas las<br>  
+                       personas disfruten en familia.
+ 
+                    </p>
+                </div>
+
+                <div class="footer__content">
+
+                    <div>
+                        <h3 class="footer__title">
+                           Sobre
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">Sobre nosotros </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Características </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Noticias y blogs </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                            Compañía
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">¿Cómo trabajamos? </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Capital </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Seguridad </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                          Soporte  
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">preguntas frecuentes </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Centro de Apoyo </a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="footer__link">Contáctenos </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <h3 class="footer__title">
+                            Síganos
+                        </h3>
+
+                        <ul class="footer__social">
+                            
+                            <a href="https://www.facebook.com/" class="footer__social-link">
+                                <i class='bx bxl-facebook-circle' ></i>
+                             </a>
+                            
+                            <a href="https://www.instagram.com/" class="footer__social-link">
+                                <i class='bx bxl-instagram-alt' ></i>
+                             </a>
+                           
+                            <a href="https://www.pinterest.com/" class="footer__social-link">
+                                <i class='bx bxl-pinterest' ></i>
+                             </a>
+                         
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div> 
+
+             <div class="footer__info container">
+                 <span class="footer__copy">
+                     &#169; Jonathan Muñoz. Todos los derechos reservados
+                 </span>
+
+                <div class="footer__privacy">
+                    <a href="#">Términos y acuerdos</a>
+                    <a href="#">Política de privacidad</a>
+                </div>
+
+             </div>
+
+
+        </footer>
+
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bx-chevrons-up' ></i>
+        </a>
+
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="js/scrollreveal.min.js"></script>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="js/swiper-bundle.min.js"></script>
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="js/main_index.js"></script>
+                                   <!-- sweetalert-->
+        <script src ="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+                      
+    </body>
+</html>

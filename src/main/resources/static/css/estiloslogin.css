@@ -1,0 +1,93 @@
+	@import url('https://fonts.googleapis.com/css2?family=PT+Serif:ital@1&display=swap');
+
+*{
+	font-family: 'PT Serif', serif;
+}
+
+html{
+	border-bottom: 0px;
+}
+
+body{
+	background:url("../img/fondo5.jpg" ) ;
+	background-size: 100% 100%;
+	background-attachment: fixed;
+}
+
+.formulario{
+	margin-top: 150px;
+	margin-bottom: 150px;
+	width: 345px;
+	margin-left: 500px;
+	margin-right: 500px;
+	background-color: rgb(144, 190, 109, 0.6);
+	border-radius: 7px;
+	padding: 1px;
+}
+
+.formulario h1{
+	margin-top: 0px;
+	background-color: #03045e;
+	color: #fff;
+	text-align: center;
+	font-size: 30px;
+	font-weight: 120px;
+	padding: 10px;
+	border-top-right-radius: 9px;
+	border-top-left-radius: 9px;
+	border-bottom: 5px solid #03045e;
+	font-weight: bold;
+}
+
+.label{
+	padding: 5px 0px;
+	font-weight: bold;
+}
+
+input{
+	padding: 5px;
+	padding-bottom: 10px;
+	padding: 5px;
+	font-size: 16px;
+
+}
+
+.inputc{
+	margin: 15px;
+	width: 85%;
+}
+
+.boton{
+	padding: 10px 15px;	
+}
+
+.botonc{
+	width: 100%;
+	padding: 10px;
+	background-color: #03045e;
+	color: #fff;
+	border-radius: 10px;
+}
+
+.botonc:hover{
+	background-color: #023e8a;
+}
+
+.link{
+	display: flex;
+	margin-top: 15px;
+	justify-content: space-between;
+	
+}
+
+.link a{
+	margin-top: 15px;
+	text-decoration: none;
+	columns: #000;
+	color:  #000;
+        font-weight: 900;
+}
+
+.link a:hover{
+	color: #9a031e;
+}

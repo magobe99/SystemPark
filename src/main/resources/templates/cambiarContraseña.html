@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="img/favicon.png" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="css/styles_login_regis.css">
+
+        <title>Recuperacion de contraseña</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+
+            <nav class="nav container">
+                
+                <a href="#" class="nav__logo">
+
+                    SistemPark <i class='bx bxs-home-alt-2' ></i>
+
+                </a>
+
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+
+                   <!--==================== Incio ====================-->
+                            <li class="nav__item"> 
+                      
+                             <a th:href="@{/}" class="nav__link active-link" >
+                                <i class='bx bx-home-alt-2' ></i>
+                                <span>Incio</span>
+
+                             </a>
+
+                            </li>
+                   <!--==================== Otra opcion ====================-->
+                            <li class="nav__item"> 
+
+                             <a th:href="@{/}" class="nav__link">
+                                <i class='bx bx-building-house' ></i>
+                                <span>Portafolio</span>
+
+                             </a>
+                   
+                            </li>
+                   <!--==================== Otra opcion ====================-->
+                            <li class="nav__item"> 
+
+                             <a th:href="@{/}" class="nav__link">
+                                <i class='bx bx-award' ></i>
+                                <span>Quienes somos</span>
+
+                             </a>
+
+                            </li>
+
+                   <!--==================== Otra opcion ====================-->
+                            <li class="nav__item"> 
+
+                             <a th:href="@{/}" class="nav__link">
+                                <i class='bx bx-phone' ></i>
+                                <span>Contactenos</span>
+
+                             </a>
+
+                            </li>
+
+                            
+                        </ul>   
+                    </div>
+
+                 <i class='bx bx-moon  change-theme' id="theme-button"></i>
+                    
+              <a th:href="@{/login}" class="button nav__button">Ingresar</a>
+              
+              
+
+            </nav>
+            
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            
+
+            <div id='login-form'class='regis'>
+            <div class="formbox">
+                
+
+                <!-- formualrio de Login
+                <br> 
+                 <h2 class="form-titulo">RECUPERAR CONTRASEÑA</h2>
+
+                 
+                <p class="text-contra">Para restablecer su contraseña digite su correo registrado y le llegará un link para asignar una nueva contraseña </p>
+                 
+
+               <form id='login' class='inputgrouplogin'  name="login" th:action="@{/enviaremail}" method="POST">
+
+                <input name="email" type="email" class='inputfield' placeholder='Correo' required  >
+           
+            
+            <button type='submit'class='submit-btnn' onclick="swal('Restableciendo','Se te a enviado la confirmaciona tu correo exitosamente', 'success');" >Restablecer</button>
+         </form>-->
+                
+                
+                
+                 <form  id="form1" th:action="@{/ModificarContraseña}" method="post" 
+                           modelAttribute="identificaion" class="" novalidate onsubmit="return validacion();"> 
+                        <table width="350" border="0"> 
+                            <tr> 
+                            <br><br>
+                            <h2>Recuperar Contraseña</h2>
+                            <br>
+
+                            </tr> 
+                            <tr> 
+                                <td><span class="cnt"> 
+                                        <input id="contrasena_usuario" name="contrasena_usuario" type="password" class="inputfield"  size="20" placeholder="Ingrese nueva contraseña" required >
+                                        <input id="codUsuario" name="identificaion" type="hidden" class="inputfield"  value="${identificaion}"  >
+                                    </span></td> 
+                            <tr><td><br></td></tr>
+
+                            <th><span class="cnt"> 
+                                    <button class="submit-btnn" type="submit" style="background-color:rgba(126, 183, 216)";>Actualizar</button></span></td> 
+                                </span></td> 
+                                </tr>  
+                        </table> 
+                        <br>
+                        
+                    </form>
+
+                
+         
+                
+                <!--<form name="login" th:action="@{/enviaremail}" method="POST"> 
+                        <table width="350" border="0"> 
+                            <tr> 
+                            <h2>Ingrese su correo</h2>
+
+                            </tr> 
+                            <tr> 
+                                <td><span class="cnt"> 
+                                        <input name="email" type="email" class="Input" value="" size="20" placeholder="Ingrese su correo" required /> 
+                                    </span></td> <br></td></tr>
+
+                            <th><span class="cnt"> 
+                                    <button class="btn btn-primary btn-large" type="submit" style="background-color:rgba(126, 183, 216)";>Enviar</button></span></td> 
+                                </tr>  
+                        </table> 
+
+                        <center> <p style="">Volver
+                                <a th:href="index">
+                                    Click Aquí
+                                </a>
+                            </p></center>
+                    </form>
+                    <!--Register
+                    <form action="" class="formulario__register">
+
+                    </form>-->
+
+         
+
+        
+            </div>
+        </div>
+
+              
+        </main>
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+
+            <div class="footer__container container grid">
+                <div>
+                    <a href="#" class="footer__logo">
+                        SistemPark<i class="bx bxs-home-alt-2"></i>
+                    </a>
+                    <p class="footer__description">
+                       
+                       
+                       Nuestra visión es hacer de todas las<br>  
+                       personas disfruten en familia.
+ 
+                    </p>
+                </div>
+
+                <div class="footer__content">
+
+                    <div>
+                        <h3 class="footer__title">
+                           Sobre
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">Sobre nosotros </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Características </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Noticias y blogs </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                            Compañía
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">¿Cómo trabajamos? </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Capital </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Seguridad </a>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h3 class="footer__title">
+                          Soporte  
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">preguntas frecuentes </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Centro de Apoyo </a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="footer__link">Contáctenos </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <h3 class="footer__title">
+                            Síganos
+                        </h3>
+
+                        <ul class="footer__social">
+                            
+                            <a href="https://www.facebook.com/" class="footer__social-link">
+                                <i class='bx bxl-facebook-circle' ></i>
+                             </a>
+                            
+                            <a href="https://www.instagram.com/" class="footer__social-link">
+                                <i class='bx bxl-instagram-alt' ></i>
+                             </a>
+                           
+                            <a href="https://www.pinterest.com/" class="footer__social-link">
+                                <i class='bx bxl-pinterest' ></i>
+                             </a>
+                         
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div> 
+
+             <div class="footer__info container">
+                 <span class="footer__copy">
+                     &#169; Jonathan Muñoz. Todos los derechos reservados
+                 </span>
+
+                <div class="footer__privacy">
+                    <a href="#">Términos y acuerdos</a>
+                    <a href="#">Política de privacidad</a>
+                </div>
+
+             </div>
+
+
+        </footer>
+
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bx-chevrons-up' ></i>
+        </a>
+
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="js/scrollreveal.min.js"></script>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="js/swiper-bundle.min.js"></script>
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+       <script src="js/main_index.js"></script>
+                                   <!-- sweetalert-->
+       <script src ="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>  
+                     
+    </body>
+</html>
+
+
+
+<!--
+<!DOCTYPE html>
+<html lang="es">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Recuperar contraseña</title>
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+        <link rel="icon" href="../img/logo2.png">
+        <link rel="stylesheet" href="../css/estilocont.css">
+        <script src = " https://unpkg.com/sweetalert/dist/sweetalert.min.js "></script>
+    </head>
+    <body>
+
+        <main>
+
+            <div class="contenedor__todo">
+                <div class="caja__trasera">
+                    <div class="caja__trasera-login">
+                        <h3>¿Ya tienes una cuenta?</h3>
+                        <p>Inicia sesión para entrar en la página</p>
+                        <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                    </div>
+                    <div class="caja__trasera-register">
+                        <br>
+                        <h3>Cambiar Contraseña</h3>
+                        <p>Ingrese la nueva contraseña que desea renovar</p>
+                    </div>
+
+                </div>
+
+                <!--Formulario de Login y registro
+                <div class="contenedor__login-register">
+                    <!--Login
+                    <form  id="form1" th:action="@{/ModificarContraseña}" method="post" 
+                           modelAttribute="identificaion" class="needs-validation" novalidate onsubmit="return validacion();"> 
+                        <table width="350" border="0"> 
+                            <tr> 
+                            <h2>Recuperar Contraseña</h2>
+
+                            </tr> 
+                            <tr> 
+                                <td><span class="cnt"> 
+                                        <input id="contrasena_usuario" name="contrasena_usuario" type="password" class="form-control"  size="20" placeholder="Ingrese nueva contraseña" required >
+                                        <input id="codUsuario" name="identificaion" type="hidden" class="form-control"  value="${identificaion}"  >
+                                    </span></td> 
+                            <tr><td><br></td></tr>
+
+                            <th><span class="cnt"> 
+                                    <button class="btn btn-primary btn-large" type="submit" style="background-color:rgba(126, 183, 216)";>Actualizar</button></span></td> 
+                                </span></td> 
+                                </tr>  
+                        </table> 
+                        <br>
+                        <p>Ingresa a tu cuenta
+                            <a th:href="index">
+                                Click Aquí
+                            </a>
+                        </p>
+                    </form>
+                    <!--Register
+                    <form action="" class="formulario__register">
+
+                    </form>
+                </div>
+            </div>
+
+        </main>
+
+        <script src="../js/script.js"></script>
+
+    </body>
+</html>

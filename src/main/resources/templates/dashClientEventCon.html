@@ -1,0 +1,249 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--css-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!--icons-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+
+	  <!--datables estilo bootstrap 4 CSS-->  
+    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+
+     <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
+	
+
+	<title>Consultar Eventos</title>
+</head>
+<body>
+
+<div class="container">
+	<aside>
+		<div class="top">
+			<div class="logo">
+				<img src="img/logosis.png">
+				<h2>Sistempark</h2>
+			</div>
+			<div class="close" id="close-btn">
+				<span class="material-icons-sharp">close</span>
+			</div>
+		</div>
+
+		<div class="sidebar">
+			<a th:href="@{/cliente}" class="active">
+				<span class="material-icons-sharp">grid_view</span>
+					<h3>incio</h3>
+			</a>
+                    
+                        <a th:href="@{/catalogoAtra}">
+				<span class="material-icons-sharp">screen_search_desktop</span>
+					<h3>Catalogo de atracciones</h3>
+			</a>
+
+			<a th:href="@{/catalogoEvent}">
+				<span class="material-icons-sharp">screen_search_desktop</span>
+					<h3>Catalogo de eventos</h3>
+			</a>
+                    
+
+			<a th:href="@{/resevAtraCli}">
+				<span class="material-icons-sharp">sentiment_very_satisfied</span>
+					<h3>Atracciones</h3>
+			</a>
+
+			<a th:href="@{/resevEventCli}">
+				<span class="material-icons-sharp">celebration</span>
+					<h3>Eventos</h3>
+			</a>
+
+			<a th:href="@{/consulAtraCli}">
+				<span class="material-icons-sharp">content_paste_search</span>
+					<h3>Consusltar Reservaciones Atracciones</h3>
+			</a>
+                    
+                        <a th:href="@{/consulEventCli}">
+				<span class="material-icons-sharp">content_paste_search</span>
+					<h3>Consultar Reservaciones Eventos</h3>
+			</a>
+
+			
+
+			<a th:href="@{/}">
+				<span class="material-icons-sharp">logout</span>
+					<h3>Salir</h3>
+			</a>
+
+		</div>
+	</aside>
+                               <!--======= contenido =======-->
+
+    <main >
+    	<h1>Cliente</h1>
+
+    	
+
+          <h2>Resevaciones por Eventos</h2>
+          
+    	
+      
+                <div class="row">
+                                    <div class="col-lg-12">
+                                        <div class="table-responsive">        
+                                            <table id="example" class="table table-striped table-bordered" cellspacing="0" width="100%">
+                                                <thead>
+                                                    <tr>
+                                                        <th ><center>Codigo de la reservacion</center></th>
+                                                <th >Nombre</th>
+                                                <th >Paquete del evento</th>
+                                                <th >Fecha</th>
+                                                <th >Hora</th>
+                                                <th >Tematica de evento</th>
+                                                <th >Comentarios</th>
+                                                <th >Modificar</th>
+                                                <th >Eliminar</th>
+                                                </tr>
+                                                </thead>
+                                                <tbody>
+
+                                                    <tr th:each="reservacionItem : ${lstReservacionesEvent}">
+                                                        <th ><center th:text="${reservacionItem.codigoreservacion}"></center></th>
+                                                <td th:text="${reservacionItem.nombre}"></td>
+                                                <td th:text="${reservacionItem.paqueteevento}"></td>
+                                                <td th:text="${reservacionItem.fecha}"></td>
+                                                <td th:text="${reservacionItem.hora}"></td>
+                                                <td th:text="${reservacionItem.tematicaevento}"></td>
+                                                <td th:text="${reservacionItem.comentarios}"></td>
+                                                <td><a type="button" class="btn btn-warning" th:href="@{/modificarReservacionEventCli(codigoreservacion=${reservacionItem.codigoreservacion})}" >Modificar</a></td>
+                                                <td><a type="button" class="btn btn-danger" th:href="@{/eliminarReservacionEventCli(codigoreservacion=${reservacionItem.codigoreservacion})}" >Eliminar</a></td>
+                                                </tr>
+                                                </tbody>
+                                                <tfoot>
+                                                    <tr>
+                                                        <th ><center>Codigo de la reservacion</center></th>
+                                                <th >Nombre</th>
+                                                <th >Paquete del evento</th>
+                                                <th >Fecha</th>
+                                                <th >Hora</th>
+                                                <th >Tematica de evento</th>
+                                                <th >Comentarios</th>
+                                                <th >Modificar</th>
+                                                <th >Eliminar</th>
+                                                </tr>
+                                                </tfoot>
+                                            </table>              
+                                        </div>
+                                    </div>
+                                </div>  
+
+
+
+
+
+
+
+    </main>                           
+
+                                           <!--======= no se que sigue :3 =======-->
+
+    <div class="right">
+    	<div class="top">
+    		<button id="menu-btn">
+    		<span class="material-icons-sharp">menu</span>
+    		</button>
+    		
+    		<div class="profile">
+    			<div class="info">
+    				<p>Hola <b>Cliente</b></p>
+    				<small class="text-muted"></small>
+    			</div>
+    			<div class="profile-photo">
+    				<img src="img/profile-1.jpg">
+    			</div>
+    		</div>
+    	</div>
+
+    	<!--==============-->
+
+    	<div class="sales-analytics">
+    		<h2>Servicios</h2>
+    		<div class="item online"> 
+    			<div class="icon">
+    				<span class="material-icons-sharp">workspace_premium</span>
+    			</div>
+    		    <div class="right">
+    			 <div class="info">
+    				<h3>Reservaciones</h3>
+    				<small class="text-muted">Atracciones</small>
+    			</div>
+ 
+    		 </div>
+    		</div>
+
+    		<div class="item offline"> 
+    			<div class="icon">
+    				<span class="material-icons-sharp">workspace_premium</span>
+    			</div>
+    		<div class="right">
+    			<div class="info">
+    				<h3>Reservaciones</h3>
+    				<small class="text-muted">Eventos</small>
+    			</div>
+    			
+    		</div>
+    		</div>
+
+    		<div class="item add-product">
+    			<div>
+    				<span class="material-icons-sharp">add</span>
+    				<h3>Añadir servicio</h3>
+    			</div>
+    		</div>
+
+
+
+
+    	</div>
+
+
+
+
+
+  </div> 
+
+                          <!--=======  fin de no se que sigue :3  =======-->
+
+
+</div>
+
+
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    
+      
+    <!-- datatables JS -->
+    <script type="text/javascript" src="datatables/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>    
+     
+    <!-- para usar botones en datatables JS -->  
+    <script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+    <script src="datatables/JSZip-2.5.0/jszip.min.js"></script>    
+    <script src="datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
+    <script src="datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+
+
+ <script src="js/index.js"></script>
+ <script src="js/main.js"></script>
+	
+</body>
+</html>

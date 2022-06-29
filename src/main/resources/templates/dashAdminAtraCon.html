@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<!--css-->
+	<link rel="stylesheet" type="text/css" href="css/style.css">
+	<!--icons-->
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons+Sharp" rel="stylesheet">
+
+	  <!--datables estilo bootstrap 4 CSS-->  
+    <link rel="stylesheet"  type="text/css" href="datatables/DataTables-1.10.18/css/dataTables.bootstrap4.min.css">
+
+     <!--datables CSS básico-->
+    <link rel="stylesheet" type="text/css" href="datatables/datatables.min.css"/>
+
+    <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.9/css/responsive.dataTables.min.css">
+
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.12.1/css/jquery.dataTables.css">
+  
+    <link rel="stylesheet" type="text/css" href="css/EstilosFormulariosResv3.css">
+
+	<title>Consultar Atracciones</title>
+</head>
+<body>
+
+<div class="container">
+	<aside>
+		<div class="top">
+			<div class="logo">
+				<img src="img/logosis.png">
+				<h2>Sistempark</h2>
+			</div>
+			<div class="close" id="close-btn">
+				<span class="material-icons-sharp">close</span>
+			</div>
+		</div>
+
+		<div class="sidebar">
+			<a th:href="@{/admin}" class="active">
+				<span class="material-icons-sharp">grid_view</span>
+					<h3>incio</h3>
+			</a>
+
+			<a th:href="@{/reservanAtra}">
+				<span class="material-icons-sharp">sentiment_very_satisfied</span>
+					<h3>Atracciones</h3>
+			</a>
+
+			<a th:href="@{/reservEventAdmin}">
+				<span class="material-icons-sharp">celebration</span>
+					<h3>Eventos</h3>
+			</a>
+
+			<a th:href="@{/consultaAtraAdmin}">
+				<span class="material-icons-sharp">content_paste_search</span>
+					<h3>Consusltar Reservaciones Atracciones</h3>
+			</a>
+                    
+                        <a th:href="@{/consultEventAdmin}">
+				<span class="material-icons-sharp">content_paste_search</span>
+					<h3>Consultar Reservaciones Eventos</h3>
+			</a>
+
+			<a th:href="@{/formularioSer}">
+				<span class="material-icons-sharp">info</span>
+					<h3>Servicios</h3>
+			</a>
+
+			<a th:href="@{/controlus}">
+				<span class="material-icons-sharp">groups</span>
+					<h3>Control de usuarios</h3>
+			</a>
+
+			<a th:href="@{/controlUsu}">
+				<span class="material-icons-sharp">contact_mail</span>
+					<h3>Enviar correos</h3>
+			</a>
+
+			<a th:href="@{/}">
+				<span class="material-icons-sharp">logout</span>
+					<h3>Salir</h3>
+			</a>
+
+		</div>
+	</aside>
+                               <!--======= contenido =======-->
+
+    <main >
+    	<h1>Administrador</h1>
+
+    	
+        
+        <form class="form" method="POST" action=""> 
+                                <h2 class="form-tit">Reporte por Atracciones</h2>
+
+                                <div class="contenedor">
+
+
+                                    <h5>Fecha del inico del reporte</h5>   
+
+                                    <input type="date" id="fechainicio" name="fechainicio"   required class="input-100" >
+
+                                    <h5>Fecha final del reporte</h5>
+
+                                    <input type="date" id="fechafin" name="fechafin"   required class="input-100">
+                                     
+                                    <br>
+
+                                    <label for="Parameter1">Formato</label>
+                                    <select id="tip0" class="form-control">
+                                        <option name="tip0" value="PDF" selected>PDF</option>
+                                        <option name="tip0" value="EXCEL">EXCEL</option>
+                                    </select><br>
+
+
+                                    <!-- botones-->
+
+                                    <button class="btn btn-warning" type="button" onclick="reporte()">Reporte</button>
+
+
+                                </div>
+                            </form> 
+        
+        
+        
+        
+
+          <h2>Resevaciones por Atracciones</h2>
+          
+    	<div class="containe">
+      
+                <div class="col-lg-12">
+                    <div class="table-responsive">        
+                        <table id="example" class="table table-striped table-bordered" cellspacing="0" cellpadding="0" width="100%">
+                        <thead>
+                            <tr>
+                                <th class="bac">Codigo de la reservacion</th>
+                                <th class="bac">Atracion</th>
+                                <th class="bac">Fecha</th>                               
+                                <th class="bac">Hora</th>
+                                <th class="bac">Niños</th>
+                                <th class="bac">Modificar</th>
+                                <th class="bac">Eliminar</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            
+                             <tr th:each="reservacionItem : ${lstReservaciones}">
+                                <th ><center th:text="${reservacionItem.codigoreservacion}"></center></th>
+                                <td th:text="${reservacionItem.atracion}"></td>
+                                <td th:text="${reservacionItem.fecha}"></td>
+                                <td th:text="${reservacionItem.hora}"></td>
+                                <td th:text="${reservacionItem.personas}"></td>
+                                <td><a type="button" class="btn btn-warning" th:href="@{/modificarReservacionClient(codigoreservacion=${reservacionItem.codigoreservacion})}" >Modificar</a></td>
+                                <td><a type="button" class="btn btn-dangerr" th:href="@{/eliminarReservacionClient(codigoreservacion=${reservacionItem.codigoreservacion})}" >Eliminar</a></td>
+                                </tr>
+                            
+                        </tbody>
+                        
+                         <tfoot>
+                         <tr>
+                            <th>Codigo de la reservacion</th>
+                            <th >Atracion</th>
+                            <th >Fecha</th>
+                            <th >Hora</th>
+                            <th >Niños</th>
+                            <th >Modificar</th>
+                            <th >Eliminar</th>
+                            </tr>
+                         </tfoot> 
+                       </table>                  
+                    </div>
+                </div>
+        </div>
+
+
+
+
+
+
+
+    </main>                           
+
+                                           <!--======= no se que sigue :3 =======-->
+
+    <div class="right">
+    	<div class="top">
+    		<button id="menu-btn">
+    		<span class="material-icons-sharp">menu</span>
+    		</button>
+    		
+    		<div class="profile">
+    			<div class="info">
+    				<p>Hola <b>Juan</b></p>
+    				<small class="text-muted">Admin</small>
+    			</div>
+    			<div class="profile-photo">
+    				<img src="img/profile-1.jpg">
+    			</div>
+    		</div>
+    	</div>
+
+    	<!--==============-->
+
+    	<div class="sales-analytics">
+    		<h2>Servicios</h2>
+    		<div class="item online"> 
+    			<div class="icon">
+    				<span class="material-icons-sharp">workspace_premium</span>
+    			</div>
+    		    <div class="right">
+    			 <div class="info">
+    				<h3>Reservaciones</h3>
+    				<small class="text-muted">Atracciones</small>
+    			</div>
+ 
+    		 </div>
+    		</div>
+
+    		<div class="item offline"> 
+    			<div class="icon">
+    				<span class="material-icons-sharp">workspace_premium</span>
+    			</div>
+    		<div class="right">
+    			<div class="info">
+    				<h3>Reservaciones</h3>
+    				<small class="text-muted">Eventos</small>
+    			</div>
+    			
+    		</div>
+    		</div>
+
+    		<div class="item add-product">
+    			<div>
+    				<span class="material-icons-sharp">add</span>
+    				<h3>Añadir servicio</h3>
+    			</div>
+    		</div>
+
+
+
+
+    	</div>
+
+
+
+
+
+  </div> 
+
+                          <!--=======  fin de no se que sigue :3  =======-->
+
+
+</div>
+
+
+
+    <script type="text/javascript" charset="utf8" src="https://cdn.datatables.net/1.12.1/js/jquery.dataTables.js"></script>
+
+    <script src="jquery/jquery-3.3.1.min.js"></script>
+    
+      
+    <!-- datatables JS -->
+    <script type="text/javascript" src="datatables/datatables.min.js"></script>
+    <script src="https://cdn.datatables.net/responsive/2.2.9/js/dataTables.responsive.min.js"></script>    
+     
+    <!-- para usar botones en datatables JS -->  
+    <script src="datatables/Buttons-1.5.6/js/dataTables.buttons.min.js"></script>  
+    <script src="datatables/JSZip-2.5.0/jszip.min.js"></script>    
+    <script src="datatables/pdfmake-0.1.36/pdfmake.min.js"></script>    
+    <script src="datatables/pdfmake-0.1.36/vfs_fonts.js"></script>
+    <script src="datatables/Buttons-1.5.6/js/buttons.html5.min.js"></script>
+
+
+ <script src="js/index.js"></script>
+ <script src="js/main.js"></script>
+	
+</body>
+</html>

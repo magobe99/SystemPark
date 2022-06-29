@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--=============== FAVICON ===============-->
+        <link rel="shortcut icon" href="img/LogoSistempark1.png" type="image/x-icon">
+
+        <!--=============== BOXICONS ===============-->
+        
+        <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+
+        
+        <!--=============== SWIPER CSS ===============-->
+        <link rel="stylesheet" href="css/swiper-bundle.min.css">
+
+        <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css"/>
+
+        <!--=============== CSS ===============-->
+        <link rel="stylesheet" href="css/styles.css">
+
+        <title>Sistempark</title>
+    </head>
+    <body>
+        <!--==================== HEADER ====================-->
+        <header class="header" id="header">
+
+            <nav class="nav container">
+                
+                <a href="#" class="nav__logo">
+
+                    SistemPark <i class='bx bxs-home-alt-2' ></i>
+
+                </a>
+
+                    <div class="nav__menu">
+                        <ul class="nav__list">
+
+                   <!--==================== Incio ====================-->
+                            <li class="nav__item"> 
+                      
+                             <a href="#home" class="nav__link active-link" >
+                                <i class='bx bx-home-alt-2' ></i>
+                                <span>Incio</span>
+
+                             </a>
+
+                            </li>
+                   <!--==================== Otra opcion ====================-->
+                            <li class="nav__item"> 
+
+                             <a href="#popular" class="nav__link">
+                                <i class='bx bx-building-house' ></i>
+                                <span>Portafolio</span>
+
+                             </a>
+                   
+                            </li>
+                   <!--==================== Otra opcion ====================-->
+                            <li class="nav__item"> 
+
+                             <a href="#value" class="nav__link">
+                                <i class='bx bx-award' ></i>
+                                <span>Quienes somos</span>
+
+                             </a>
+
+                            </li>
+
+                   <!--==================== Otra opcion ====================-->
+                            <li class="nav__item"> 
+
+                             <a href="#contact" class="nav__link">
+                                <i class='bx bx-phone' ></i>
+                                <span>Contáctenos</span>
+
+                             </a>
+
+                            </li>
+
+                            
+                        </ul>   
+                    </div>
+
+                 <i class='bx bx-moon  change-theme' id="theme-button"></i>
+                    
+              <a th:href="@{/login}" class="button nav__button">Ingresar</a>
+              
+              
+
+            </nav>
+            
+        </header>
+
+        <!--==================== MAIN ====================-->
+        <main class="main">
+            <!--==================== HOME ====================-->
+            <section class="home section" id="home">
+
+              
+
+                <div class="home__container container grid">   
+     
+                 <div class="home__data"> 
+                   
+                   <h2 class="home__title"> 
+                        
+                       Descrubre las <br> mejores atracciones <br> para tus hijos
+                   </h2>
+
+                   <p class="home__description">
+                      
+                      Ven y conocen el primer y único parque temático de Fontibón, con el que podrás compartir tiempo en familia con tus hijos. 
+ 
+                      ofrecemos el mejor servicio para tus hijos, con las mejores instalaciones para que vengan a divertices y aprender en familia. </p>
+          
+                    <!-- <form action="" class="home__search"> 
+                         <i class='bx bxs-map'></i>
+                         <input type="search" placeholder="buscar" class="home__search-input">
+                         <button class="button">Buscar</button>
+
+                     </form>-->
+
+
+                     <div class="home__value">
+                         
+                         <div>
+                            <h1 class="home__value-number">  
+
+                             <span>+</span>6
+
+                            </h1>
+
+                            <span class="home__value-description">
+                                
+                              Atracciones <br>       
+
+                            </span>
+
+                         </div>
+
+
+                         <div>
+                            <h1 class="home__value-number">  
+
+                             <span>+</span>2
+
+                            </h1>
+
+                            <span class="home__value-description">
+                                
+                              Paquetes  de <br> eventos       
+
+                            </span>
+
+                         </div>
+
+                        <div>
+                            <h1 class="home__value-number">  
+
+                             <span>+</span>10
+
+                            </h1>
+
+                            <span class="home__value-description">
+                                
+                              Personas a <br> tu servicio       
+
+                            </span>
+
+                         </div>
+
+                     </div>
+
+                  </div>
+
+                 
+                 <div class="home__images">
+
+                    <div class="home__orbe">
+                        
+                        <div class="home__img">
+                            
+                            <img src="img/Entrada.jpg" alt="">
+                        </div>
+
+                    </div>
+                    
+                 </div> 
+
+                </div>
+                
+            </section>
+
+            <!--==================== LOGOS ====================-->
+            <section class="logos section">
+
+                <div class="logos__container container grid">
+                    
+                    <div class="logos__img">
+                        <img src="img/logo1.png">
+                    </div>
+
+                     <div class="logos__img">
+                        <img src="img/logo2.png">
+                    </div>
+
+                     <div class="logos__img">
+                        <img src="img/logo3.png">
+                    </div>
+
+                     <div class="logos__img">
+                        <img src="img/logo4.png">
+                    </div>
+
+                </div>
+      
+            </section>
+
+            <!--==================== POPULAR ====================-->
+            <section class="popular section" id="popular">
+                <div class="container">
+                    <span class="section__subtitle">Nuestros Servicios</span>
+                    <h2 class="section__title">
+                        Atracciones y Eventos<span>.</span>
+                    </h2>
+
+                    <div class="popular__container swiper">
+                        <div class="swiper-wrapper">
+
+
+                            <article class="popular__card swiper-slide">
+                                <img src="img/Zona-de-bebes.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>6.000 20Min
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                        Zona para bebe
+                                    </h3>
+                                    <p class="popular__description">
+                                        Esta atracción está diseñada y adecuada para niños entre 6 mes 
+                                        y 1 año donde podrán jugar acompañados de sus padres.
+
+                                    </p>
+                                </div>
+                            </article>
+
+
+                             <article class="popular__card swiper-slide">
+                                <img src="img/CasaJuegos.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                       <span>$</span>6.000 20Min 
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                        La casa de juguetes
+                                    </h3>
+                                    <p class="popular__description">
+                                        En esta atracción los niños contarán con 
+                                        una gran variedad en juguetería con la que podrán jugar sin límites.
+
+                                    </p>
+                                </div>
+                            </article>
+
+
+                             <article class="popular__card swiper-slide">
+                                <img src="img/Arenero.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>6.000 20Min
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                        La arenera
+                                    </h3>
+                                    <p class="popular__description">
+                                       En esta atracción los niños contaran con diferentes moldes, 
+                                       palas y diferentes accesorios que los ayudara a hacer castillos, 
+                                       casas y diferentes figuras en arena.
+
+                                    </p>
+                                </div>
+                            </article>
+
+
+                             <article class="popular__card swiper-slide">
+                                <img src="img/Tractomula.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>6.000 20Min
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                         Tractomula didáctica
+                                    </h3>
+                                    <p class="popular__description">
+                                        En esta atracción los niños contarán con diferentes 
+                                        bocetos e imágenes donde podrán dibujar y pintar de 
+                                        manera creativa dejando liberar así su imaginación.
+
+                                    </p>
+                                </div>
+                            </article>
+
+
+                            <article class="popular__card swiper-slide">
+                                <img src="img/popular5.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>7.000 20Min
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                       La avioneta didáctica
+                                    </h3>
+                                    <p class="popular__description">
+                                       En esta atracción los niños contarán con una guía 
+                                       de cómo hacer slime y de cómo personalizarlo a su gusto, 
+                                       también contara con diferentes moldes y herramientas para 
+                                       que el niño pueda hacer diferentes figuras en plastilina.
+
+                                    </p>
+                                </div>
+                            </article>
+                            
+                            
+                            <article class="popular__card swiper-slide">
+                                <img src="img/PiscinaPelotas.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>7.000 20Min
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                      Piscina de pelotas
+                                    </h3>
+                                    <p class="popular__description">
+                                         En esta atracción los niños contarán con una piscina 
+                                         de pelotas bastante amplia donde podrán divertirse sin límites.
+
+                                    </p>
+                                </div>
+                            </article>
+                            
+                                                        
+                            <article class="popular__card swiper-slide">
+                                <img src="img/evento1.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>1'000.000 
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                       Paquete Platinum
+                                    </h3>
+                                    <p class="popular__description">
+                                        <a href="">Mas informacion</a>
+                                    </p>
+                                </div>
+                            </article>
+                            
+                            
+                            <article class="popular__card swiper-slide">
+                                <img src="img/evento2.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>1'000.000 
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                       Paquete Golden
+                                    </h3>
+                                    <p class="popular__description">
+                                        <a href="">Mas informacion</a>
+                                    </p>
+                                </div>
+                            </article>
+                            
+                            
+                            
+                            <article class="popular__card swiper-slide">
+                                <img src="img/evento3.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>1'000.000 
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                       Paquete Premium
+                                    </h3>
+                                    <p class="popular__description">
+                                        <a href="">Mas informacion</a>
+                                    </p>
+                                </div>
+                            </article>
+                            
+                            
+                            <article class="popular__card swiper-slide">
+                                <img src="img/MuroEscalado.jpg" class="popular__img">
+
+                                <div class="popular__data">
+                                    <h2 class="popular__price">
+                                        <span>$</span>7.000 20Min
+                                    </h2>
+
+                                    <h3 class="popular__title">
+                                       Muro de escaldo
+                                    </h3>
+                                    <p class="popular__description">
+                                      En esta atracción los niños contarán con un muro donde 
+                                      podrán escalar sin riesgo alguno y podrán divertirse sin parar.
+
+                                    </p>
+                                </div>
+                            </article>
+                            
+
+                            
+                        </div>
+
+                        <div class="swiper-button-next">
+                               <i class='bx bx-chevron-right'></i>
+                        </div>
+
+                        <div class="swiper-button-prev">
+                            <i class='bx bx-chevron-left' ></i>
+                        </div>
+
+                    </div>
+                </div>
+            </section>
+
+            <!--==================== VALUE ====================-->
+            <section class="value section" id="value">
+                <div class="value__container container grid">
+                    <div class="value__images">
+                        <div class="value__orbe"></div>
+
+                        <div class="value__img">
+                            <img src="img/ParTematico.jpg">
+                        </div>
+                    </div>
+
+                    <div class="value__content">
+                        <div class="value__data">
+                            <span class="section__subtitle">Quienes somos</span>
+                            <h2 class="section__title">
+                               El Valor que te damos<span>.</span>
+                            </h2>
+                            <p class="value__description">
+                               Siempre estamos listos para ayudar brindándole el mejor servicio. 
+                               Creemos que un buen lugar para que puedas compartir con tus hijos.
+                            </p>
+                        </div>
+
+                        <div class="value__accordion">
+                            <div class="value__accordion-item ">
+                                <header class="value__accordion-header">
+                                    <i class='bx bxs-map value__accordion-icon' ></i>
+                                    <h3 class="value__accordion-title">
+                                        Ubicación
+                                    </h3>
+                                    <div class="value__accordion-arrow">
+                                        <i class='bx bxs-down-arrow'></i>
+                                        
+                                    </div>
+                                </header>
+
+                                <div class="value__accordion-content">
+                                    <p class="value__accordion-description">
+
+                                    Estamos ubicados en la calle 20 #99-60 en la localidad de Fontibon, 
+                                    nuestro propósito es brindarle un buen entretenimientos a los niños desde 
+                                    los 6 meses hasta los 10 años con las diferentes atracciones, 
+                                    también contamos con eventos totalmente personalizados para el gusto de nuestros clientes. 
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+                              <div class="value__accordion-item">
+                                <header class="value__accordion-header">
+                                   <i class='bx bxs-check-square value__accordion-icon' ></i>
+                                    <h3 class="value__accordion-title">
+                                       Misión 
+                                    </h3>
+                                    <div class="value__accordion-arrow">
+                                       <i class='bx bxs-down-arrow'></i>
+                                       
+                                    </div>
+                                </header>
+
+                                <div class="value__accordion-content">
+                                    <p class="value__accordion-description">
+
+                                    Por medio de las temáticas del parque los padres 
+                                    puedan compartir con sus hijos de una manera divertida 
+                                    y aprender a conocer sus talentos. 
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+                              <div class="value__accordion-item">
+                                <header class="value__accordion-header">
+                                    <i class='bx bxs-happy-beaming value__accordion-icon'></i>
+                                    <h3 class="value__accordion-title">
+                                        Visión
+                                    </h3>
+                                    <div class="value__accordion-arrow">
+                                        <i class='bx bxs-down-arrow'></i>
+                                        
+                                    </div>
+                                </header>
+
+                                <div class="value__accordion-content">
+                                    <p class="value__accordion-description">
+
+                                    Para el año 2026 Pteleo Kids se proyecta ser uno de los lugares 
+                                    con mayor acogida paralas nuevas generaciones, por su deseo de 
+                                    insentivar el aprendizaje por medio del juego, los buenos principios 
+                                    y la sana convivencia.
+                                    </p>
+                                </div>
+
+
+                            </div>
+
+
+
+                              <div class="value__accordion-item">
+                                <header class="value__accordion-header">
+                                    <i class='bx bxs-bar-chart-square value__accordion-icon' ></i>
+                                    <h3 class="value__accordion-title">
+                                        Los mejores precios
+                                    </h3>
+                                    <div class="value__accordion-arrow">
+                                        <i class='bx bxs-down-arrow'></i>
+                                       
+                                    </div>
+                                </header>
+
+                                <div class="value__accordion-content">
+                                    <p class="value__accordion-description">
+
+                                    Contamos con los mejores precios para vengas con tus hijos y te diviertas
+                                    sin parar en todas nuestras atracciones.
+                                    </p>
+                                </div>
+
+
+                            </div>
+                        </div> 
+                    </div>
+                </div> 
+            </section>
+
+            <!--==================== CONTACT ====================-->
+            <section class="contact section" id="contact">
+                <div class="contact__container container grid">
+                    
+                    <div class="contact__images">
+                        <div class="contact__orbe"></div>
+
+                        <div class="contact__img">
+                            <img src="img/contac1.png">
+                        </div>    
+                    </div>
+
+                    <div class=" contact__content">
+                        <div class="contact__data">
+                            <span class="section__subtitle">Contáctenos</span>
+                            <h2 class="section__title">
+                                Fácil de contactarnos<span>.</span>
+                            </h2>
+                            <p class="contact__description">
+                                
+                                ¿Hay algún problema para encontrar tu atraccion? 
+                                ¿Necesita una guía para tu evento? 
+                                o necesita una consulta sobre temas de tu reservacion? Solo contáctenos.
+                             </p>
+                        </div>
+
+                        <div class="contact__card">
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-phone-call' ></i>
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            LLamar
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            Meet
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button class="button contact__card-button">
+                                    <a href="https://meet.google.com/fzz-jvvd-yvv"  >
+                                                      LLamar ahora
+                                               </a>
+                                </button>
+
+                            </div>
+
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-message-rounded-dots' ></i>
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            Chat
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            Facebook
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button class="button contact__card-button">
+                                    <a href="https://www.facebook.com/"  >
+                                                      Chatear ahora
+                                               </a>
+                                </button>
+
+                            </div>
+
+
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-video' ></i>
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            Videollamada
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            Meet
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button  class="button contact__card-button">
+                                   <a href="https://meet.google.com/fzz-jvvd-yvv"  >
+                                                      Videollamada ahora
+                                               </a>
+                                </button>
+
+                            </div>
+
+
+                            <div class="contact__card-box">
+                                <div class="contact__card-info">
+                                    <i class='bx bxs-envelope' ></i>
+                                    <div>
+                                        <h3 class="contact__card-title">
+                                            Mensaje
+                                        </h3>
+                                        <p class="contact__card-description">
+                                            Gmail
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <button  class="button contact__card-button">
+                                    <a th:href="@{/contacform}"  >
+                                                      Mensaje ahora
+                                               </a>
+                                </button>
+
+                            </div>
+
+
+
+                        </div>  
+                    </div>
+                </div>
+            
+            </section>
+
+            <!--==================== SUBSCRIBE ====================-->
+            <section class="subscribe section">
+
+                <div class="subscribe__container container">
+                    <h1 class="subscribe__title">
+                        Comienza tus Reservaciones
+                    </h1>
+                    <p class="subscribe__description">
+                        Registrate para poder empezar con tus reservaciones
+                        y poder distrutar de nuestros servicios.
+
+                    </p>
+                    <a th:href="@{/login}" class="button subscribe__button">
+                        Registrate
+                    </a>
+                </div>
+                
+            </section>
+        </main>
+        
+        
+        
+        <!--==================Mapa========================== -->
+        
+        
+        <div class="conatiner">
+            <div class="borde div-arriba">
+	<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.5442919652205!2d-74.14299185840979!3d4.675014065003463!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8e3f9c8c384f4329%3A0x904070f7ff39a329!2sCl.%2020%20%2399-60%2C%20Bogot%C3%A1!5e0!3m2!1ses-419!2sco!4v1624137640286!5m2!1ses-419!2sco" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="map"></iframe>
+	    </div>
+        </div>
+        
+        
+
+        <!--==================== FOOTER ====================-->
+        <footer class="footer section">
+
+            <div class="footer__container container grid">
+                <div>
+                    <a href="#" class="footer__logo">
+                        SistemPark<i class="bx bxs-home-alt-2"></i>
+                    </a>
+                    <p class="footer__description">
+                       
+                       
+                       Nuestra visión es hacer de todas las<br>  
+                       personas disfruten en familia.
+ 
+                    </p>
+                </div>
+
+                <div class="footer__content">
+
+                    <div>
+                        <h3 class="footer__title">
+                           Sobre
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">Sobre nosotros </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Características </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Noticias y blogs </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                            Compañía
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">¿Cómo trabajamos? </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Capital </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Seguridad </a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div>
+                        <h3 class="footer__title">
+                          Soporte  
+                        </h3>
+
+                        <ul class="footer__links">
+                            <li>
+                                <a href="#" class="footer__link">preguntas frecuentes </a>
+                            </li>
+                            <li>
+                                <a href="#" class="footer__link">Centro de Apoyo </a>
+                            </li>
+                            <li>
+                                <a href="#contact" class="footer__link">Contáctenos </a>
+                            </li>
+                        </ul>
+                    </div>
+
+
+                    <div>
+                        <h3 class="footer__title">
+                            Síganos
+                        </h3>
+
+                        <ul class="footer__social">
+                            
+                            <a href="https://www.facebook.com/" class="footer__social-link">
+                                <i class='bx bxl-facebook-circle' ></i>
+                             </a>
+                            
+                            <a href="https://www.instagram.com/" class="footer__social-link">
+                                <i class='bx bxl-instagram-alt' ></i>
+                             </a>
+                           
+                            <a href="https://www.pinterest.com/" class="footer__social-link">
+                                <i class='bx bxl-pinterest' ></i>
+                             </a>
+                         
+                        </ul>
+                    </div>
+                    
+                </div>
+            </div> 
+
+             <div class="footer__info container">
+                 <span class="footer__copy">
+                     &#169; Jonathan Muñoz. Todos los derechos reservados
+                 </span>
+
+                <div class="footer__privacy">
+                    <a href="#">Términos y acuerdos</a>
+                    <a href="#">Política de privacidad</a>
+                </div>
+
+             </div>
+
+
+        </footer>
+
+
+        <!--========== SCROLL UP ==========-->
+        <a href="#" class="scrollup" id="scroll-up">
+            <i class='bx bx-chevrons-up' ></i>
+        </a>
+
+
+        <!--=============== SCROLLREVEAL ===============-->
+        <script src="js/scrollreveal.min.js"></script>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+
+
+        <!--=============== SWIPER JS ===============-->
+        <script src="js/swiper-bundle.min.js"></script>
+
+        <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script>
+
+        <!--=============== MAIN JS ===============-->
+        <script src="js/main_index.js"></script>
+    </body>
+</html>
